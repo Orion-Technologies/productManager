@@ -13,7 +13,7 @@ class ProductManager {
         const codeValidation = productCode => productCode.code === code
         //some: retuena true si code ya existe
         if(this.products.some(codeValidation)) {
-            console.log("El producto ya existe")
+            console.warn("El producto ya existe")
         } else {
             this.products.push({id: this.autoId(), title, description, price, thumbnail, code, stock})
         }
@@ -24,7 +24,7 @@ class ProductManager {
     // funcion que recibe un parametro y devuelve un producto especifico
     getProductById = (id) => {
         const findById = this.products.find(element => element.id === id)
-        return findById ? findById : "Not Found"
+        return findById ? findById : console.error("Not Found")
     }
 }
 
