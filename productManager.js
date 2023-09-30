@@ -24,7 +24,7 @@ class ProductManager {
     // funcion que recibe un parametro y devuelve un producto especifico
     getProductById = (id) => {
         const findById = this.products.find(element => element.id === id)
-        return findById ? findById : console.error("Not Found")
+        return findById ? findById : "Not Found"
     }
 }
 
